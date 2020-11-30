@@ -143,5 +143,5 @@ class Message extends vhannels.ViewGroup {
     }
 }
 
-/** @type vhannels.floatContlos.Message */
+/** @type Message */
 vhannels.floatContlos.Message = Message;

@@ -34,7 +34,11 @@
 /* 消息样式 */
 [vhannels = "fybug.vhannels.floatContlos.FloatMessage.Message"] {
     &.show {
-        margin: 0 .5rem .5rem;
+        margin: 0 0 .5rem;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
     }
 
     p {
@@ -44,11 +48,6 @@
 
     &.primary {
         background-color: #d7ecfa;
-        color: #0a0a0a;
-    }
-
-    &.secondary {
-        background-color: #eaeaea;
         color: #0a0a0a;
     }
 
@@ -71,9 +70,5 @@
         margin-left: -100%;
         /* 透明 */
         opacity: 0;
-    }
-
-    &:after {
-        border-radius: 50%;
     }
 }

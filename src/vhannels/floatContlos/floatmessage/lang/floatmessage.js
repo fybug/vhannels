@@ -24,11 +24,11 @@ class FloatMessage extends vhannels.ViewGroup {
     /** 展示消息对象
      *
      * @param {vhannels.floatContlos.Message} message 要展示的消息
-     * @param {number} time 消息展示的时长，不传入则为无限
+     * @param {number|undefined} time 消息展示的时长，不传入则为无限
      *
      * @return vhannels.floatContlos.Message 消息对象
      */
-    showMessage(message, time) {
+    showMessage(message, time = undefined) {
         this.append(message);
         setTimeout(() => message.class({toggle: {"show": true, "destroy": false}}), 10);
 
@@ -61,5 +61,5 @@ class FloatMessage extends vhannels.ViewGroup {
     }
 }
 
-/** @type vhannels.floatContlos.FloatMessage */
+/** @type FloatMessage */
 vhannels.floatContlos.FloatMessage = FloatMessage;
