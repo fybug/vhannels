@@ -1,7 +1,7 @@
 {
   "name": "vhannels",
   "version": "0.0.1",
-  "description": "轻量级 web 原生控件框架",
+  "description": "轻量级 web 原生复合框架",
   "private": false,
   "scripts": {
     "debug": "webpack-dev-server --hot -w --config webpack.dev.js",

@@ -16,17 +16,19 @@
 
 ## 模块分布
 ### js 模块
-- vhannels.tool.js 单独的 js 小工具，独立引入
-- vhannels_publiclib.js 全局模块，包含基础控件库，使用以下控件均要引入该模块。
-    - vhannels.floatContlos_all.js 浮动控件库，包含以下控件
-        - vhannels.floatContlos.floatmessage.js 浮动消息控件
+- vhannels_publiclib.js 全局模块，包含基础控件库，所有模块都需要引入他。
+- vhannels.tool.js | js 小工具
+- vhannels.floatContlos_all.js 悬浮控件库，包含以下控件
+    - vhannels.floatContlos.floatmessage.js 悬浮消息控件
+    - vhannels.floatContlos.floatdialog.js 悬浮对话框控件
 
 ### css 模块
 样式模块都在 `style` 文件夹中
 
 - vhannels.style.css 全局样式，用于规范默认的样式属性，包含基于属性的样式框架。
-- vhannels.floatContlos_all.css 浮动控件所有模块的样式，包含以下样式
-    - vhannels.floatContlos.floatmessage.css 浮动消息控件样式
+- vhannels.floatContlos_all.css 悬浮控件所有模块的样式，包含以下样式
+    - vhannels.floatContlos.floatmessage.css 悬浮消息控件样式
+    - vhannels.floatContlos.floatdialog.css 悬浮对话框控件
 
 ## 提供bug反馈或建议
 - [码云Gitee](https://gitee.com/fybug/vhannels)
