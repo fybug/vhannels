@@ -19,3 +19,7 @@ vhannels.setName = (names) => {
 
 require("./View");
 require("./ViewGroup");
+
+// 全局 Body 对象
+window.addEventListener("load", () =>
+    vhannels.View.Body = new vhannels.ViewGroup(document.body));

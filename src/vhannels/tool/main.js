@@ -34,7 +34,7 @@ vhannels.tool.getQueryString = (key, defaval = undefined) => {
  * @param {number} maxpage 最大页码
  * @param {number} pagnum 分页数量
  * @param {function(number,boolean,boolean,number,number)} edge 边缘导航生成，传入：当前页码，是否是后边缘，是否远离边缘，最大页码，分页数量
- * @param {function(number,boolean,number,number)} fun 分页生成，传入：当前分页位置，时候是当前页码，最大分页，分页数量
+ * @param {function(number,boolean,number,number)} fun 分页生成，传入：当前分页位置，是否是当前页码，最大分页，分页数量
  */
 vhannels.tool.Paging = (nowpage, maxpage, pagnum, edge, fun) => {
     // 向前快速索引

@@ -28,34 +28,24 @@ class View {
         return this.#dom;
     }
 
-    /** 查找子视图
+    /** 刷新 html 内容
      *
-     * @param {string} select 查找规则
-     * @return vhannels.ViewGroup[]
+     * @param {string} html 新的 html 内容
+     * @return this
      */
-    querySelectorAll(select) {
-        let d = this.getDom();
-        // 查询的数据
-        let nods = d.querySelectorAll(select);
-
-        /* 转化 */
-        let re = [];
-        nods.forEach(v => re.push(new vhannels.ViewGroup(v)));
-
-        return re;
+    setHtml(html) {
+        this.getDom().innerHTML = html;
+        return this;
     }
 
-    /** 查找子视图
-     *
-     * @param {string} select 查找规则
-     * @return vhannels.ViewGroup
-     */
-    querySelector(select) {
-        let d = this.getDom();
-        // 查询的数据
-        let node = d.querySelector(select);
+    /** 获取 html 内容 */
+    html() {
+        return this.getDom().innerHTML;
+    }
 
-        return new vhannels.ViewGroup(node);
+    /** 获取 innerText 的内容 */
+    text() {
+        return this.getDom().innerText;
     }
 
     /*--------------------------------------------------------------------------------------------*/
@@ -77,6 +67,30 @@ class View {
         }
         return this;
     }
+
+    /** 获取属性
+     *
+     * @param {[string]} data 要获取的属性列表
+     * @return {{"string":string}} 获取的属性映射
+     */
+    getattrs(data) {
+        let d = this.getDom();
+        let ats = {};
+
+        for (let v of data) ats[v] = d.getAttribute(v);
+
+        return ats;
+    }
+
+    /** 获取 value 属性的内容
+     *
+     * @return string 获取的属性值
+     */
+    value() {
+        return this.getattrs(["value"]).value;
+    }
+
+    /*------------------------*/
 
     /** 类操作
      *
@@ -207,6 +221,13 @@ class View {
         if (view instanceof vhannels.View)
             return view.getDom();
         return view;
+    }
+
+    static creaView(dom) {
+        if (typeof dom === 'string')
+            return new View(document.createElement(dom));
+        else
+            return new View(dom);
     }
 }
 

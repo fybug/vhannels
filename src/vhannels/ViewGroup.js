@@ -39,6 +39,36 @@ class ViewGroup extends vhannels.View {
         return views;
     }
 
+    /** 查找子视图
+     *
+     * @param {string} select 查找规则
+     * @return vhannels.ViewGroup[]
+     */
+    querySelectorAll(select) {
+        let d = this.getDom();
+        // 查询的数据
+        let nods = d.querySelectorAll(select);
+
+        /* 转化 */
+        let re = [];
+        nods.forEach(v => re.push(new vhannels.ViewGroup(v)));
+
+        return re;
+    }
+
+    /** 查找子视图
+     *
+     * @param {string} select 查找规则
+     * @return vhannels.ViewGroup
+     */
+    querySelector(select) {
+        let d = this.getDom();
+        // 查询的数据
+        let node = d.querySelector(select);
+
+        return new vhannels.ViewGroup(node);
+    }
+
     /*--------------------------------------------------------------------------------------------*/
 
     /** 在容器前面插入视图
@@ -67,9 +97,19 @@ class ViewGroup extends vhannels.View {
         return this;
     }
 
+    /** 追加 html 内容
+     *
+     * @param {string} html 追加的 html 内容
+     * @return this
+     */
+    addHtml(html) {
+        this.getDom().innerHTML += html;
+        return this;
+    }
+
     /*--------------------------------------------------------------------------------------------*/
 
-    /** 删除指定的视图
+    /** 删除容器内指定的视图
      *
      * @param {vhannels.View|HTMLElement} view 要删除的视图
      * @return this
@@ -96,6 +136,39 @@ class ViewGroup extends vhannels.View {
         for (let vt of viewto)
             d.replaceChild(ViewGroup.__toDom(vt.to), ViewGroup.__toDom(vt.of));
         return this;
+    }
+
+    /** 清空内容
+     *
+     * 可通过查询表达式删除指定的所有内容
+     *
+     * @param {string|undefined} query 查询表达式
+     * @return this
+     */
+    clean(query = undefined) {
+        if (query === undefined)
+            this.getDom().innerHTML = '';
+        else
+            this.querySelectorAll(query).forEach(v => v.remove());
+        return this;
+    }
+
+    /*--------------------------------------------------------------------------------------------*/
+
+    static creaViewGroup(dom) {
+        if (typeof dom === 'string')
+            return new ViewGroup(document.createElement(dom));
+        else
+            return new ViewGroup(dom);
+    }
+
+    /** 确保对象为 ViewGroup 对象
+     *
+     * @return vhannels.ViewGroup
+     */
+    static __toViewGroup(dom) {
+        if (dom instanceof vhannels.ViewGroup) return dom;
+        return this.creaViewGroup(dom);
     }
 }
 
