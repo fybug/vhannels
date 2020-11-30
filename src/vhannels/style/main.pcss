@@ -1,0 +1,56 @@
+/* 框架公共 css */
+@charset "UTF-8";
+
+* {
+    position: relative;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    /* font-family: "SourceHanSans-Light", serif; font-size: 16px; */
+}
+
+body, html {
+    font-size: 16px;
+    height: 100%;
+    width: 100%;
+}
+
+/*-------------------------- margin:自动外边距 ------------------------------------*/
+
+/* 自动横向外边距 */
+[margin~="horizontal"] {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 自动纵向外边距 */
+[margin~="vertical"] {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+/*------------------------------------ full -------------------------------------*/
+
+/* 宽度拉满 */
+[full~="width"] {
+    min-width: 100%;
+    width: 100%;
+}
+
+/* 高度拉满 */
+[full~="height"] {
+    min-height: 100%;
+    height: 100%;
+}
+
+/* 拉伸到屏幕宽度 */
+[full~="screenWidth"] {
+    min-width: 100vw;
+    width: 100vw;
+}
+
+/* 拉伸到屏幕高度 */
+[full~="screenHeight"] {
+    min-height: 100vh;
+    height: 100vh;
+}

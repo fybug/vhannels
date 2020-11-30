@@ -1,0 +1,79 @@
+@charset "UTF-8";
+
+[vhannels = "fybug.vhannels.floatContlos.FloatMessage"] {
+    /* 固定定位的纵向弹性盒 */
+    display: flex;
+    flex-flow: column;
+    position: fixed;
+    transition: all 0.5s;
+    /* 贴紧屏幕左下角，并左移 1rem 上移 2rem */
+    left: 0;
+    bottom: 0;
+    height: auto;
+    margin-left: 1rem;
+    overflow: hidden;
+    padding-bottom: 1.5rem;
+}
+
+[vhannels = "fybug.vhannels.floatContlos.FloatMessage.Message"] {
+    /* 带边框的圆角框 */
+    border-radius: 1rem;
+    max-width: 15rem;
+    width: 15rem;
+    word-break: break-all;
+    border: 1px solid rgba(10, 10, 10, 0.25);
+    padding: 0 1rem;
+    margin: calc(100% - 2.5rem) .5rem -100%;
+    /* 默认背景颜色 */
+    background-color: white;
+    color: #0a0a0a;
+    transition: all 0.5s;
+    opacity: 1;
+}
+
+/* 消息样式 */
+[vhannels = "fybug.vhannels.floatContlos.FloatMessage.Message"] {
+    &.show {
+        margin: 0 .5rem .5rem;
+    }
+
+    p {
+        display: block;
+        margin: .5rem .5rem;
+    }
+
+    &.primary {
+        background-color: #d7ecfa;
+        color: #0a0a0a;
+    }
+
+    &.secondary {
+        background-color: #eaeaea;
+        color: #0a0a0a;
+    }
+
+    &.success {
+        background-color: #e1faea;
+        color: #0a0a0a;
+    }
+
+    &.alert {
+        background-color: #f7e4e1;
+        color: #0a0a0a;
+    }
+
+    &.warning {
+        background-color: #fff3d9;
+        color: #0a0a0a;
+    }
+
+    &.destroy {
+        margin-left: -100%;
+        /* 透明 */
+        opacity: 0;
+    }
+
+    &:after {
+        border-radius: 50%;
+    }
+}
