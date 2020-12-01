@@ -1,6 +1,7 @@
 /** 悬浮对话框工具
  *
- * 用于容纳对话框对象，并且提供展示与销毁的方法维护
+ * 用于容纳对话框对象，并且提供展示与销毁的方法<br/>
+ * 一次只能使用一个对话框对象，不可堆积多个
  *
  * @extends vhannels.ViewGroup
  * @class vhannels.floatContlos.FloatDialog
@@ -71,22 +72,9 @@ class FloatDialog extends vhannels.ViewGroup {
 
     /*--------------------------------------------------------------------------------------------*/
 
-    /** 销毁对话框容器
-     *
-     * 使用 {@link vhannels.floatContlos.Dialog.destroy} 方法销毁对话框后隐藏容器
-     */
-    destroy() {
-        this.#nowdialog.destroy();
-        setTimeout(() => {
-            this.class({toggle: {"show": false}});
-            this.#destroylistern(this.#nowdialog);
-            this.#nowdialog = undefined;
-        }, 300);
-    }
-
     /** 展示对话框和容器
      *
-     * 展示容器后使用 {@link vhannels.floatContlos.Dialog.show} 方法展示对话框
+     * 展示容器后使用 {@link vhannels.floatContlos.Dialog.__show} 方法展示对话框
      *
      * @param {vhannels.floatContlos.Dialog} dailog 对话框对象
      * @param {boolean} canhide 是否可以通过外部关闭
@@ -107,9 +95,22 @@ class FloatDialog extends vhannels.ViewGroup {
         this.#nowdialog = dailog;
         this.#showlistern(dailog);
 
-        dailog.binFloatDialog(this);
-        dailog.show();
+        dailog.__binFloatDialog(this);
+        dailog.__show();
         return true;
+    }
+
+    /** 销毁对话框容器
+     *
+     * 使用 {@link vhannels.floatContlos.Dialog.__destroy} 方法销毁对话框后隐藏容器
+     */
+    destroy() {
+        this.#nowdialog.__destroy();
+        setTimeout(() => {
+            this.class({toggle: {"show": false}});
+            this.#destroylistern(this.#nowdialog);
+            this.#nowdialog = undefined;
+        }, 300);
     }
 }
 

@@ -2,7 +2,7 @@
  *
  * 用于显示多种状态的消息，每种状态都可以设定对应显示方式
  *
- * @extends vhannels.View
+ * @extends vhannels.ViewGroup
  * @class vhannels.floatContlos.Message
  * @see vhannels.floatContlos.FloatMessage
  * @author fybug

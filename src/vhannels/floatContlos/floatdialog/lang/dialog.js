@@ -42,18 +42,6 @@ class Dialog extends vhannels.ViewGroup {
 
     /*--------------------------------------------------------------------------------------------*/
 
-    /** 绑定对话框容器
-     *
-     * @param {vhannels.floatContlos.FloatDialog} flo 对话框容器对象
-     * @return this
-     */
-    binFloatDialog(flo) {
-        this.#float = flo;
-        return this;
-    }
-
-    /*---------------------------------------*/
-
     /** 展示的 html
      *
      * 每次展示的时候使用该方法重新生成 html 内容或者 dom 对象
@@ -92,10 +80,20 @@ class Dialog extends vhannels.ViewGroup {
 
     /*--------------------------------------------------------------------------------------------*/
 
+    /** 绑定对话框容器
+     *
+     * @param {vhannels.floatContlos.FloatDialog} flo 对话框容器对象
+     * @return this
+     */
+    __binFloatDialog(flo) {
+        this.#float = flo;
+        return this;
+    }
+
     /** 展示对话框
      * @return this
      */
-    show() {
+    __show() {
         let ht = this.#showhtml(this);
         if (typeof ht === "string") this.setHtml(ht);
         else this.append(...ht);
@@ -106,7 +104,7 @@ class Dialog extends vhannels.ViewGroup {
     }
 
     /** 销毁对话框 */
-    destroy() {
+    __destroy() {
         this.class({toggle: {"show": false}});
         setTimeout(() => {
             this.#destroylistern(this);
@@ -117,5 +115,5 @@ class Dialog extends vhannels.ViewGroup {
     }
 }
 
-/** @type vhannels.floatContlos.Dialog */
-vhannels.setName(["floatContlos"]).Dialog = Dialog;
+/** @type Dialog */
+vhannels.floatContlos.Dialog = Dialog;

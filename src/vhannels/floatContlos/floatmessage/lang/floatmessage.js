@@ -12,7 +12,7 @@ class FloatMessage extends vhannels.ViewGroup {
     /**
      * @param {HTMLElement|vhannels.ViewGroup} dom 容器添加到该节点内
      */
-    constructor(dom = document.body) {
+    constructor(dom = vhannels.View.Body) {
         super(document.createElement("messagegroup"));
         // 插入消息容器
         dom.append(this.getDom());
