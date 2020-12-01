@@ -1,3 +1,6 @@
+<p align="center">
+<img src="https://images.gitee.com/uploads/images/2020/1201/153538_5324cb8a_2071767.png" width="394" height="131" alt="Icon"/>
+
 # vhannels
 ![](https://img.shields.io/badge/version-0.0.1-00b58a.svg "当前版本")
 ![](https://img.shields.io/badge/webpack-4.44.2+-2e93ff.svg "开发所使用等等 webpack 版本")
