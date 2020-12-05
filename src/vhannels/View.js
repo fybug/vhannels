@@ -31,19 +31,25 @@ class View {
     /** 刷新 html 内容
      *
      * @param {string} html 新的 html 内容
-     * @return this
+     * @return {vhannels.View} this
      */
     setHtml(html) {
         this.getDom().innerHTML = html;
         return this;
     }
 
-    /** 获取 html 内容 */
+    /** 获取 html 内容
+     *
+     * @return {string}
+     */
     html() {
         return this.getDom().innerHTML;
     }
 
-    /** 获取 innerText 的内容 */
+    /** 获取 innerText 的内容
+     *
+     * @return {string}
+     */
     text() {
         return this.getDom().innerText;
     }
@@ -53,7 +59,7 @@ class View {
     /** 属性修改
      *
      * @param {Object} data { 属性名：属性值 }，属性值为 undefined 则是消除属性
-     * @return this
+     * @return {vhannels.View} this
      */
     attrs(data) {
         let d = this.getDom();
@@ -84,7 +90,7 @@ class View {
 
     /** 获取 value 属性的内容
      *
-     * @return string 获取的属性值
+     * @return {string} 获取的属性值
      */
     value() {
         return this.getattrs(["value"]).value;
@@ -214,7 +220,7 @@ class View {
 
     /** 确保为原始元素节点
      *
-     * @param {HTMLElement|View} view 要确保的对象
+     * @param {HTMLElement|vhannels.View} view 要确保的对象
      * @return {HTMLElement} 元素节点
      */
     static __toDom(view) {
@@ -231,5 +237,4 @@ class View {
     }
 }
 
-/** @type View */
 vhannels.View = View;

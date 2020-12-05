@@ -51,7 +51,7 @@ class FloatDialog extends vhannels.ViewGroup {
      * 控件展示时的监听，参数传入当前子控件
      *
      * @param {function(vhannels.floatContlos.Dialog)} run 监听方法
-     * @return this
+     * @return {vhannels.floatContlos.FloatDialog} this
      */
     showListern(run) {
         this.#showlistern = run;
@@ -63,7 +63,7 @@ class FloatDialog extends vhannels.ViewGroup {
      * 控件销毁时的监听，参数传入当前子控件
      *
      * @param {function(vhannels.floatContlos.Dialog)} run 监听方法
-     * @return this
+     * @return {vhannels.floatContlos.FloatDialog} this
      */
     destroyListern(run) {
         this.#destroylistern = run;
@@ -79,7 +79,7 @@ class FloatDialog extends vhannels.ViewGroup {
      * @param {vhannels.floatContlos.Dialog} dailog 对话框对象
      * @param {boolean} canhide 是否可以通过外部关闭
      *
-     * @return boolean
+     * @return {boolean}
      */
     show(dailog, canhide = false) {
         // 一次只能展示一个
@@ -114,5 +114,4 @@ class FloatDialog extends vhannels.ViewGroup {
     }
 }
 
-/** @type FloatDialog */
 vhannels.floatContlos.FloatDialog = FloatDialog;

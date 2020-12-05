@@ -47,7 +47,7 @@ class Dialog extends vhannels.ViewGroup {
      * 每次展示的时候使用该方法重新生成 html 内容或者 dom 对象
      *
      * @param {function(vhannels.floatContlos.Dialog):(string|[Element]|[vhannels.ViewGroup])} html 生成 html 内容的方法
-     * @return this
+     * @return {vhannels.floatContlos.Dialog} this
      */
     show_Html(html) {
         this.#showhtml = html;
@@ -59,7 +59,7 @@ class Dialog extends vhannels.ViewGroup {
      * 控件展示时的监听，参数传入控件本身
      *
      * @param {function(vhannels.floatContlos.Dialog)} run 监听方法
-     * @return this
+     * @return {vhannels.floatContlos.Dialog} this
      */
     showListern(run) {
         this.#showlistern = run;
@@ -71,7 +71,7 @@ class Dialog extends vhannels.ViewGroup {
      * 控件销毁时的监听，参数传入控件本身
      *
      * @param {function(vhannels.floatContlos.Dialog)} run 监听方法
-     * @return this
+     * @return {vhannels.floatContlos.Dialog} this
      */
     destroyListern(run) {
         this.#destroylistern = run;
@@ -83,7 +83,7 @@ class Dialog extends vhannels.ViewGroup {
     /** 绑定对话框容器
      *
      * @param {vhannels.floatContlos.FloatDialog} flo 对话框容器对象
-     * @return this
+     * @return {vhannels.floatContlos.Dialog} this
      */
     __binFloatDialog(flo) {
         this.#float = flo;
@@ -91,7 +91,7 @@ class Dialog extends vhannels.ViewGroup {
     }
 
     /** 展示对话框
-     * @return this
+     * @return {vhannels.floatContlos.Dialog} this
      */
     __show() {
         let ht = this.#showhtml(this);
@@ -115,5 +115,4 @@ class Dialog extends vhannels.ViewGroup {
     }
 }
 
-/** @type Dialog */
 vhannels.floatContlos.Dialog = Dialog;

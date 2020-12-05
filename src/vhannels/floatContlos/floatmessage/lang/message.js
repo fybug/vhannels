@@ -68,7 +68,7 @@ class Message extends vhannels.ViewGroup {
      *
      * @param {string} message 消息内容
      *
-     * @return this
+     * @return {vhannels.floatContlos.Message} this
      */
     message_load(message) {
         this.__toclass("primary");
@@ -82,7 +82,7 @@ class Message extends vhannels.ViewGroup {
      *
      * @param {string} message 消息内容
      *
-     * @return this
+     * @return {vhannels.floatContlos.Message} this
      */
     message_success(message) {
         this.__toclass("success");
@@ -96,7 +96,7 @@ class Message extends vhannels.ViewGroup {
      *
      * @param {string} message 消息内容
      *
-     * @return this
+     * @return {vhannels.floatContlos.Message} this
      */
     message_error(message) {
         this.__toclass("alert");
@@ -110,7 +110,7 @@ class Message extends vhannels.ViewGroup {
      *
      * @param {string} message 消息内容
      *
-     * @return this
+     * @return {vhannels.floatContlos.Message} this
      */
     message_warnning(message) {
         this.__toclass("warning");
@@ -143,5 +143,4 @@ class Message extends vhannels.ViewGroup {
     }
 }
 
-/** @type Message */
 vhannels.floatContlos.Message = Message;

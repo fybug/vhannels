@@ -26,7 +26,7 @@ class FloatMessage extends vhannels.ViewGroup {
      * @param {vhannels.floatContlos.Message} message 要展示的消息
      * @param {number|undefined} time 消息展示的时长，不传入则为无限
      *
-     * @return vhannels.floatContlos.Message 消息对象
+     * @return {vhannels.floatContlos.Message} 消息对象
      */
     showMessage(message, time = undefined) {
         this.append(message);
@@ -50,7 +50,7 @@ class FloatMessage extends vhannels.ViewGroup {
      * }} styrun 每一个状态的显示处理，load/success/error 会额外传入当前请求的消息内容，在有消息的状态没有定义处理的时候会使用默认处理 default
      * @param {function(vhannels.ViewGroup)} bestyle 前置渲染，初始化视图的内容，传入消息视图对象
      *
-     * @return vhannels.floatContlos.Message 消息对象
+     * @return {vhannels.floatContlos.Message} 消息对象
      */
     createMessage(styrun = {}, bestyle = v =>
         v.append(new vhannels.View(document.createElement("p")))
@@ -61,5 +61,4 @@ class FloatMessage extends vhannels.ViewGroup {
     }
 }
 
-/** @type FloatMessage */
 vhannels.floatContlos.FloatMessage = FloatMessage;
