@@ -53,7 +53,7 @@ class FloatMessage extends vhannels.ViewGroup {
      * @return {vhannels.floatContlos.Message} 消息对象
      */
     createMessage(styrun = {}, bestyle = v =>
-        v.append(new vhannels.View(document.createElement("p")))
+        v.append(document.createElement("p"))
     ) {
         let v = new vhannels.floatContlos.Message(styrun);
         bestyle(v);

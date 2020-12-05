@@ -37,7 +37,7 @@ class Message extends vhannels.ViewGroup {
          *
          * @type function(vhannels.ViewGroup)
          */
-        destroy: v => setTimeout(() => v.remove(), 600)
+        destroy: v => setTimeout(() => v.remove(), 350)
     };
 
     /**
