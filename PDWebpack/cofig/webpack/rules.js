@@ -22,9 +22,9 @@ module.exports = (confget, conf) => [
             options: {
                 presets: [
                     // 支持 es 2015
-                    "@babel/preset-env",
+                    // "@babel/preset-env",
                     // 支持 react
-                    "@babel/preset-react",
+                    // "@babel/preset-react",
                 ],
                 plugins: [
                     // 支持类属性
