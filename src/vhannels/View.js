@@ -88,12 +88,12 @@ class View {
         return ats;
     }
 
-    /** 获取 value 属性的内容
+    /** 获取 value 的内容
      *
      * @return {string} 获取的属性值
      */
     value() {
-        return this.getattrs(["value"]).value;
+        return this.getDom().value;
     }
 
     /*------------------------*/
