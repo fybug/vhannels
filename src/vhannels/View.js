@@ -139,7 +139,7 @@ class View {
             if (clas.check)
                 for (let v of clas.check) re[v] = a.contains(v);
             // 移除
-            clas.remove && a.remove(...clas);
+            clas.remove && a.remove(...clas.remove);
             // 切换
             if (clas.toggle)
                 if (Array.isArray(clas.toggle)) {
