@@ -20,22 +20,29 @@ class ViewGroup extends vhannels.View {
      *
      * 与 {@link views} 的区别为直接返回原始数据
      *
-     * @return {HTMLCollection} 节点集合
+     * @return {Element[]} 节点集合
      */
     doms() {
-        return this.getDom().children;
+        let re = [];
+        let node = this.getDom().firstElementChild;
+        /* 转化 */
+        while (node) {
+            re.push(node);
+            node = node.nextElementSibling;
+        }
+        return re;
     }
 
     /** 获取子视图集合
      *
      * 于 {@link doms} 的区别为返回包装后的数据
      *
-     * @return {vhannels.View[]} 视图集合
+     * @return {vhannels.ViewGroup[]} 视图集合
      */
     views() {
         let views = [];
         for (let v of this.doms())
-            views.push(new vhannels.View(v));
+            views.push(new vhannels.ViewGroup(v));
         return views;
     }
 

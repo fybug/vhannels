@@ -22,7 +22,7 @@ class Dialog extends vhannels.ViewGroup {
      */
     #destroylistern = d => void 0;
     /** 内容初始化方法
-     * @type function(vhannels.floatContlos.Dialog):(string|[Element|[vhannels.ViewGroup)
+     * @type function(vhannels.floatContlos.Dialog):(string|[Element]|[vhannels.ViewGroup])
      */
     #showhtml = d => "";
 
