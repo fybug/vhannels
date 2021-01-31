@@ -54,6 +54,17 @@ class View {
         return this.getDom().innerText;
     }
 
+    /** 设置 innerText 的内容
+     *
+     * @param {string} t 文本内容
+     *
+     * @return {vhannels.View} this
+     */
+    settext(t) {
+        this.getDom().innerText = t;
+        return this;
+    }
+
     /*--------------------------------------------------------------------------------------------*/
 
     /** 属性修改
@@ -94,6 +105,17 @@ class View {
      */
     value() {
         return this.getDom().value;
+    }
+
+    /** 设置 value 的内容
+     *
+     * @param {string} v 要设置的值
+     *
+     * @return {vhannels.View} this
+     */
+    setvalue(v) {
+        this.getDom().value = v;
+        return this;
     }
 
     /*------------------------*/
