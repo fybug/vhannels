@@ -7,7 +7,7 @@ vhannels.setName(['tool']);
  *
  * @return {string} 获取的值
  */
-vhannels.tool.getQueryString = (key, defaval = undefined) => {
+vhannels.tool.getQueryString = function (key, defaval = undefined) {
     let str = location.href;
     let num = str.indexOf("?");
     // 截取参数数据
@@ -36,7 +36,7 @@ vhannels.tool.getQueryString = (key, defaval = undefined) => {
  * @param {function(number,boolean,boolean,number,number)} edge 边缘导航生成，传入：当前页码，是否是后边缘，是否远离边缘，最大页码，分页数量
  * @param {function(number,boolean,number,number)} fun 分页生成，传入：当前分页位置，是否是当前页码，最大分页，分页数量
  */
-vhannels.tool.Paging = (nowpage, maxpage, pagnum, edge, fun) => {
+vhannels.tool.Paging = function (nowpage, maxpage, pagnum, edge, fun) {
     // 向前快速索引
     if (nowpage > pagnum && maxpage > pagnum * 2 + 1) {
         edge(nowpage, false, nowpage > pagnum + 1, maxpage, pagnum);
