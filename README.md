@@ -3,7 +3,7 @@
 
 # vhannels
 ![](https://img.shields.io/badge/version-0.0.1-00b58a.svg "当前版本")
-![](https://img.shields.io/badge/webpack-4.44.2+-2e93ff.svg "开发所使用等等 webpack 版本")
+![](https://img.shields.io/badge/webpack-4.44.2-2e93ff.svg "开发所使用等等 webpack 版本")
 ![](https://img.shields.io/badge/license-Apache%202.0-f27122.svg "使用的开源协议")
 
 用于 web 项目的原生 js 开发的工具库 && 控件库。
