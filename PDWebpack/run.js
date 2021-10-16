@@ -6,9 +6,6 @@ confload.runOf('ModeLoad', /** @param {ModeLoad} modeload */(modeload) => {
     modeload.addMode('vhannels.floatContlos_all', SourcePath + 'vhannels/floatContlos/main.js');
     modeload.addMode('vhannels.floatContlos.floatmessage', SourcePath + 'vhannels/floatContlos/floatmessage/main.js');
     modeload.addMode('vhannels.floatContlos.floatdialog', SourcePath + 'vhannels/floatContlos/floatdialog/main.js');
-    // 页面控件包
-    modeload.addMode('vhannels.pageContlos_all', SourcePath + 'vhannels/pageContlos/main.js');
-    modeload.addMode('vhannels.pageContlos.tab', SourcePath + 'vhannels/pageContlos/tab/main.js');
     // 工具包
     modeload.addMode('vhannels.tool', SourcePath + 'vhannels/tool/main.js');
 
